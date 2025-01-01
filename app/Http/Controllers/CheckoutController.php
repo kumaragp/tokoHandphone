@@ -45,13 +45,13 @@ class CheckoutController extends Controller
 
         $transaction->snap_token = $snapToken;
         $transaction->save();
-        return response()->json([
-        'success' => true,
-        'message' => 'berhasil melakukan Checkout, menunggu pembayaran',
-        'transaction' => $transaction,
-        'snap_token' => $snapToken,
-    ]);
-        // return redirect()->route('checkout', $transaction->id);
+    //     return response()->json([
+    //     'success' => true,
+    //     'message' => 'berhasil melakukan Checkout, menunggu pembayaran',
+    //     'transaction' => $transaction,
+    //     'snap_token' => $snapToken,
+    // ]);
+        return redirect()->route('checkout', $transaction->id);
     }
 
     public function checkout(Transaction $transaction)

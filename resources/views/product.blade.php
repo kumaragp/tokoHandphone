@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-md-8">
                     <h1>{{ $product['name'] }}</h1>
-                    <h1>{{ csrf_token() }}</h1>
+                    <!-- <h1>{{ csrf_token() }}</h1> -->
                     <p>{{ $product['description'] }}</p>
                     <p>Rp{{ number_format($product['price'], 0, ',', '.') }}</p>
                     <form action="{{ route('checkout-process') }}" method="POST">
